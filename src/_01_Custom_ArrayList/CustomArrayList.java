@@ -2,10 +2,11 @@ package _01_Custom_ArrayList;
 
 @SuppressWarnings("unchecked")
 
-public class ArrayList <T>{
-	public T t;
-	ArrayList<T> list = new ArrayList<T>();
-	public ArrayList() {
+public class CustomArrayList <T>{
+	CustomArrayList<T> list = new CustomArrayList<>();
+	public CustomArrayList() {
+		CustomArrayList<T> list = new CustomArrayList<>();
+		this.list = list;
 	}
 	
 	public T get(int loc) throws IndexOutOfBoundsException {
@@ -21,7 +22,7 @@ public class ArrayList <T>{
 	}
 	
 	public void set(int loc, T val) throws IndexOutOfBoundsException {
-		list.get(loc).equals(val);
+		list.set(loc, val);
 	}
 	
 	public void remove(int loc) throws IndexOutOfBoundsException {

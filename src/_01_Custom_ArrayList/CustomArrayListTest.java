@@ -9,7 +9,7 @@ public class CustomArrayListTest {
 
 	@Test
 	public void testAddAndGet() {
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		CustomArrayList<Integer> list = new CustomArrayList<Integer>();
 		list.add(0);
 		list.add(1);
 		list.add(206);
@@ -21,7 +21,7 @@ public class CustomArrayListTest {
 	
 	@Test
 	public void testSet() {
-		ArrayList<String> list = new ArrayList<String>();
+		CustomArrayList<String> list = new CustomArrayList<String>();
 		list.add("TESTER");
 		list.add("ONE");
 		list.add("TWO");
@@ -37,7 +37,7 @@ public class CustomArrayListTest {
 	
 	@Test
 	public void testAddAt() {
-		ArrayList<Character> list = new ArrayList<Character>();
+		CustomArrayList<Character> list = new CustomArrayList<Character>();
 		list.add('D');
 		list.add('I');
 		list.add('G');
@@ -60,7 +60,7 @@ public class CustomArrayListTest {
 				name = s;
 			}
 		}
-		ArrayList<Student> list = new ArrayList<Student>();
+		CustomArrayList<Student> list = new CustomArrayList<Student>();
 		list.add(new Student("Tim"));
 		list.add(new Student("Sara"));
 		list.add(new Student("Kamara"));
@@ -89,7 +89,7 @@ public class CustomArrayListTest {
 	
 	@Test
 	public void testContains() {
-		ArrayList<String> list = new ArrayList<String>();
+		CustomArrayList<String> list = new CustomArrayList<String>();
 		list.add("This");
 		list.add("is");
 		list.add("only");
@@ -105,7 +105,7 @@ public class CustomArrayListTest {
 	
 	@Test
 	public void testSize() {
-		ArrayList<String> list = new ArrayList<String>();
+		CustomArrayList<String> list = new CustomArrayList<String>();
 		list.add("This");
 		list.add("is");
 		list.add("only");
@@ -114,7 +114,7 @@ public class CustomArrayListTest {
 
 		assertTrue(list.size() == 5);
 		
-		ArrayList<Integer> list2 = new ArrayList<Integer>();
+		CustomArrayList<Integer> list2 = new CustomArrayList<Integer>();
 		list2.add(0);
 		list2.add(1);
 		list2.add(206);
@@ -124,7 +124,7 @@ public class CustomArrayListTest {
 	
 	@Test
 	public void testSizeOnRemove() {
-		ArrayList<String> list = new ArrayList<String>();
+		CustomArrayList<String> list = new CustomArrayList<String>();
 		list.add("This");
 		list.add("is");
 		list.add("only");
