@@ -112,14 +112,14 @@ public class CustomArrayListTest {
 		list.add("a");
 		list.add("test");
 
-		assertTrue(list.size() == 5);
+		assertTrue(list.list.length == 5);
 		
 		CustomArrayList<Integer> list2 = new CustomArrayList<Integer>();
 		list2.add(0);
 		list2.add(1);
 		list2.add(206);
 		
-		assertTrue(list2.size() == 3);
+		assertTrue(list2.list.length == 3);
 	}
 	
 	@Test
