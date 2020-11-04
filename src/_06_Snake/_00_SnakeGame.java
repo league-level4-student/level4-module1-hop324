@@ -87,13 +87,13 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		//   of the game. The smaller the number, the faster it goes.
 		switch(choice) {
 		case "Expert":
-			timer.setDelay(1);
+			timer.setDelay(100);
 			break;
 		case "Moderate":
-			timer.setDelay(2);
+			timer.setDelay(500);
 			break;
 		case "Beginner":
-			timer.setDelay(3);
+			timer.setDelay(750);
 			break;
 		}
 		//3. start the timer
@@ -116,19 +116,24 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		//   to determine which key was pressed.
 		switch(e.getKeyCode()) {
 		case 37:
-			snake.setDirection(Direction.RIGHT);
-			break;
-		case 38:
-			snake.setDirection(Direction.UP);
-			break;
-		case 39:
+			System.out.println("Right");
 			snake.setDirection(Direction.LEFT);
 			break;
-		case 40:
+		case 38:
 			snake.setDirection(Direction.DOWN);
+			System.out.println("Up");
+			break;
+		case 39:
+			snake.setDirection(Direction.RIGHT);
+			System.out.println("Left");
+			break;
+		case 40:
+			snake.setDirection(Direction.UP);
+			System.out.println("Down");
 			break;
 		case 32:
 			snake.feed();
+			setFoodLocation();
 			break;
 	}
 		// if an arrow key is pressed, set the snake's 
@@ -162,8 +167,8 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		//   else, exit the game
 		switch(answer) {
 		case"Yes":
+			setFoodLocation();
 			snake.reset(foodLocation);
-			
 			timer.start();
 		}
 	}
@@ -185,11 +190,14 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		else if(snake.isOutOfBounds()) {
 			gameOver();
 		}
+		System.out.println(snake.getHeadLocation());
+		System.out.println(foodLocation);
 		//3. if the location of the head is equal to the location of the food,
 		// 	 feed the snake and set the food location
-		if(snake.getHeadLocation() == foodLocation) {
+		if(snake.getHeadLocation().equals(foodLocation)) {
+			System.out.println("Yay");
 			snake.feed();
-			snake.reset(foodLocation);
+			setFoodLocation();
 		}
 		//4. call panel.repaint();
 		panel.repaint();
